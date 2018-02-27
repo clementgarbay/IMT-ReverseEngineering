@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module generateHTML('http://data') /]
+[comment 'platform:/resource/tp.fil/src/tp/fil/resources/Data.ecore' /]
+ 
+[template public generateHTML(model : Model)]
+[comment @main/]  
+[file ('PetStore_rendering.html', false, 'UTF-8')]
+	
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <meta charset="utf-8" />
+	  <title>PetStore</title>
+	</head>
+	<body>
+  	[for (class : Class | model.classes)]
+		<img src="http://yuml.me/diagram/scruffy/class/[getClassStr(class)/]" >
+	[/for]
+	</body>
+	</html>
+
+[/file]
+[/template]
+
+[query public getClassStr(class : Class) : String =
+	'[' + class.name + '|' + class.attributes->collect(getAttributeStr()) + ']' /]
+
+[query public getAttributeStr(attribute: Attribute) : String =
+	getVisibilityStr(attribute.visibility) + attribute.name + ': ' + attribute.type.name + ';' /]
+
+[query public getVisibilityStr(visibility : String) : String = 
+	if visibility.equalsIgnoreCase('private') then 
+		'-'
+	else if visibility.equalsIgnoreCase('protected') then
+		'#'
+	else 
+		'+'
+	endif endif
+/]
+	

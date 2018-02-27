@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module generateSQL('http://data')]
+[comment 'platform:/resource/tp.fil/src/tp/fil/resources/Data.ecore' /]
+
+[template public generateSQL(model : Model)]
+[comment @main/] 
+[file ('PetStore_database.sql', false, 'UTF-8')]
+	
+	[for (class: Class | model.classes)]
+CREATE TABLE [class.name/] (
+		[for (attribute: Attribute | class.attributes) separator (',\n')]
+	[attribute.name + ' ' + mapTypes(attribute.type)/]
+		[/for]
+); ['\n'/]
+	[/for]
+
+[/file]
+[/template]
+
+[query public mapTypes(type : Type) : String = 
+	if type.name.equalsIgnoreCase('String') then 
+		'VARCHAR(255)'
+	else if type.name.equalsIgnoreCase('int') or type.name.equalsIgnoreCase('Integer') then 
+		'INT' 
+	else if type.name.equalsIgnoreCase('double') then 
+		'FLOAT'
+	else if type.name.equalsIgnoreCase('float') then 
+		'REAL'
+	else if type.name.equalsIgnoreCase('BigDecimal') then 
+		'DECIMAL'
+	else if type.name.equalsIgnoreCase('long') then 
+		'BIGINT'
+	else if type.name.equalsIgnoreCase('Date') then 
+		'DATE'
+	else if type.name.equalsIgnoreCase('boolean') then 
+		'BIT'
+	else 
+		'VARCHAR(255)'
+	endif endif endif endif endif endif endif endif
+/] 

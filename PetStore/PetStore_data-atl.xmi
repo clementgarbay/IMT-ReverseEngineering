@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:data="http://data">
+  <classes name="SellerContactInfo">
+    <attributes name="contactInfoID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="lastName" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="firstName" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="email" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="Tag">
+    <attributes name="tagID" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="items" visibility="private">
+      <type name="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Item>"/>
+    </attributes>
+    <attributes name="tag" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="refCount" visibility="private">
+      <type name="int"/>
+    </attributes>
+  </classes>
+  <classes name="Address">
+    <attributes name="addressID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="street1" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="street2" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="city" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="state" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="zip" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="latitude" visibility="private">
+      <type name="double"/>
+    </attributes>
+    <attributes name="longitude" visibility="private">
+      <type name="double"/>
+    </attributes>
+    <attributes name="COMMA" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="FileUploadResponse">
+    <attributes name="itemId" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="productId" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="message" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="status" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="duration" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="durationString" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="startDate" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="endDate" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="uploadSize" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="thumbnail" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="Category">
+    <attributes name="categoryID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="name" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="description" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="imageURL" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="RatingBean">
+    <attributes name="itemId" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="grade" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="cf" visibility="private">
+      <type name="CatalogFacade"/>
+    </attributes>
+  </classes>
+  <classes name="PayPalBean">
+    <attributes name="postData" visibility="none">
+      <type name="BuyNowPostData"/>
+    </attributes>
+  </classes>
+  <classes name="ZipLocation">
+    <attributes name="zipCode" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="city" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="state" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="Item">
+    <attributes name="itemID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="productID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="name" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="description" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="imageURL" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="imageThumbURL" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="price" visibility="private">
+      <type name="BigDecimal"/>
+    </attributes>
+    <attributes name="address" visibility="private">
+      <type name="Address"/>
+    </attributes>
+    <attributes name="contactInfo" visibility="private">
+      <type name="SellerContactInfo"/>
+    </attributes>
+    <attributes name="totalScore" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="numberOfVotes" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="disabled" visibility="private">
+      <type name="int"/>
+    </attributes>
+    <attributes name="tags" visibility="private">
+      <type name="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Tag>"/>
+    </attributes>
+  </classes>
+  <classes name="Product">
+    <attributes name="productID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="categoryID" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="name" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="description" visibility="private">
+      <type name="String"/>
+    </attributes>
+    <attributes name="imageURL" visibility="private">
+      <type name="String"/>
+    </attributes>
+  </classes>
+  <classes name="CatalogFacade">
+    <attributes name="emf" visibility="private">
+      <type name="EntityManagerFactory"/>
+    </attributes>
+    <attributes name="utx" visibility="private">
+      <type name="UserTransaction"/>
+    </attributes>
+    <attributes name="bDebug" visibility="private">
+      <type name="boolean"/>
+    </attributes>
+  </classes>
+</data:Model>
